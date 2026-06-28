@@ -7,17 +7,20 @@ void countingSort(int arr[], int n) {
         if (arr[i] > maxVal) maxVal = arr[i];
 
     int count[maxVal + 1] = {0};
-
     for (int i = 0; i < n; i++)
         count[arr[i]]++;
 
-    int idx = 0;
-    for (int v = 0; v <= maxVal; v++) {
-        while (count[v] > 0) {
-            arr[idx++] = v;
-            count[v]--;
-        }
+    for (int v = 1; v <= maxVal; v++)
+        count[v] += count[v - 1];
+
+    int output[n];
+    for (int i = n - 1; i >= 0; i--) {
+        output[count[arr[i]] - 1] = arr[i];
+        count[arr[i]]--;
     }
+
+    for (int i = 0; i < n; i++)
+        arr[i] = output[i];
 }
 
 void printArray(int arr[], int n) {
