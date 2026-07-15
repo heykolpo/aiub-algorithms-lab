@@ -30,12 +30,9 @@ void printCodes(Node* root, string code) {
 }
 
 int main() {
-    int n;
-    cin >> n;
-    char ch[n];
-    int freq[n];
-    for (int i = 0; i < n; i++)
-        cin >> ch[i] >> freq[i];
+    char ch[] = {'a', 'b', 'c', 'd', 'e', 'f'};
+    int freq[] = {5, 9, 12, 13, 16, 45};
+    int n = 6;
 
     priority_queue<Node*, vector<Node*>, Compare> pq;
     for (int i = 0; i < n; i++)
