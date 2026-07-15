@@ -13,14 +13,9 @@ bool compare(Item a, Item b) {
 }
 
 int main() {
-    int n;
-    cin >> n;
-    Item items[n];
-    for (int i = 0; i < n; i++)
-        cin >> items[i].weight >> items[i].value;
-
-    int capacity;
-    cin >> capacity;
+    Item items[] = {{10, 60}, {20, 100}, {30, 120}};
+    int n = 3;
+    int capacity = 50;
 
     sort(items, items + n, compare);
 
