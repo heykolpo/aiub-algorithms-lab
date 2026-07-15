@@ -13,11 +13,8 @@ bool compare(Job a, Job b) {
 }
 
 int main() {
-    int n;
-    cin >> n;
-    Job jobs[n];
-    for (int i = 0; i < n; i++)
-        cin >> jobs[i].id >> jobs[i].deadline >> jobs[i].profit;
+    Job jobs[] = {{'a', 2, 100}, {'b', 1, 19}, {'c', 2, 27}, {'d', 1, 25}, {'e', 3, 15}};
+    int n = 5;
 
     sort(jobs, jobs + n, compare);
 
